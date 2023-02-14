@@ -1,0 +1,48 @@
+int* find_all(const string st,char ch, int& count) const {
+	int* ids;
+	count = 1;
+	for (int i = st.Length() - 1; i >= 0; i--)
+	{
+		if (st[i] == ch)
+		{
+			count++;
+		}
+	}
+	ids = new int[count];
+	int j = 0;
+	for (int i = 0; i <st.Length(); i++)
+	{
+		if (st[i] == ch)
+		{
+			ids[j] = i;
+			j++;
+		}
+	}
+	return ids;
+}
+
+
+int find_first(const string st,char ch) const {
+
+	int id = 0;
+	for (int i = 0; i < st.Length(); i++)
+	{
+		if (st[i] == ch)
+		{
+			id = i;
+			return id;
+		}
+	}
+}
+int find_last(const string st,char ch) const {
+
+	int id = 0;
+	for (int i = st.Length()-1; i >=0 ; i--)
+	{
+		if (st[i] == ch)
+		{
+			id = i;
+			return id;
+		}
+	}
+}
