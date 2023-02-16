@@ -1,0 +1,18 @@
+bool isCharacter(char character) {
+    if ((character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z')) {
+        return true;
+    }
+    return false;
+}
+int count(string st)
+{
+    int count = 0;
+    for (int i = 1; i < st.length(); i++)
+    {
+        if ((isCharacter(st[i - 1])&&st[i]==' ') || (i == st.length() - 1))
+        {
+            count++;
+        }
+    }
+    return count;
+}
