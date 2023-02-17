@@ -1,0 +1,61 @@
+
+//task 1 with bonuses
+void trim(const string st) {
+	int i1=0, i2=0;
+	int s = 0;
+	while (!ischaracter(st[s]))
+	{
+		
+		s++;
+	}
+	i1 = s;
+	s = st.length()-1;
+	while (!ischaracter(st[s]))
+	{
+
+		s--;
+	}
+	i2 = s;
+	string vs;
+	int t = i1;
+	int j = 0;
+	for (int i = i1; i <= i2; i++)
+	{
+		vs[j] = st[i];
+		j++;
+	}
+	st=vs;
+	
+	
+}
+
+//task 2 with bonus
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        int *a=new int [500]{};
+        int *b=new int[500]{};
+        if(s.length()!=t.length())
+        {
+            return false;
+        }
+        for(int i=0;i<s.length();i++)
+        {
+            int x=s[i]-'0';
+            a[x]++;
+            int y=t[i]-'0';
+            b[y]++;
+        }
+        for(int i=0;i<500;i++)
+        {
+            if(a[i]!=b[i])
+            {
+                return false;
+            }
+
+        }
+        return true;
+
+
+    }
+};
